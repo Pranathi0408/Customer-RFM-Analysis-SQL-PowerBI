@@ -212,3 +212,21 @@ Analyze the significant revenue decline from January to June and identify the ma
 
 Customer Segmentation 
 Develop segment-specific strategies to retain At Risk customers, re-engage Lost Customers, and nurture Potential Loyalists toward higher-value segments. 
+
+## Project Outcome
+
+This project demonstrates the use of SQL and Power BI to transform transaction data into customer-level insights.
+
+The analysis helps identify:
+
+High-value customers
+Customers at risk of churn
+Customer segments
+Revenue-driving segments
+High-performing product categories
+Top-performing products
+Revenue trends
+
+The resulting dashboard provides an interactive view of customer behavior, revenue performance, product performance, and business recommendations.
+
+Author — Pranathi K
