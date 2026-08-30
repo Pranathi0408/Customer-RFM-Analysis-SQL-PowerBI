@@ -1,232 +1,228 @@
-# Customer RFM Analysis — SQL & Power BI
+**Customer RFM Analysis — SQL & Power BI** 
+**Project Overview** 
 
-## Project Overview
+This project analyzes customer purchasing behavior, customer segmentation, churn risk, revenue performance, and product performance using MySQL and Power BI. 
 
-This project analyzes customer purchasing behavior using **MySQL and Power BI**.
+The project applies RFM (Recency, Frequency, Monetary) analysis to understand customer purchasing behavior and classify customers into meaningful segments. The analysis also identifies customers based on churn risk and evaluates revenue contribution across customer segments and product categories. 
 
-The analysis applies **RFM (Recency, Frequency, Monetary)** methodology to understand customer behavior, segment customers based on purchasing patterns, identify churn-risk customers, and analyze revenue and product performance.
+The final Power BI dashboard contains four pages that provide customer-level analysis, revenue analysis, product performance, and an executive summary with business recommendations. 
 
-The project combines SQL-based data preparation and analysis with an interactive Power BI dashboard to generate actionable business insights and recommendations.
+**Objectives**
 
----
+• Analyze customer purchasing behavior using transaction data. 
+• Clean and prepare the data using SQL. 
+• Calculate Recency, Frequency, and Monetary metrics. 
+• Create RFM scores using quartile-based scoring. 
+• Segment customers based on RFM behavior. 
+• Classify customers based on churn risk. 
+• Analyze revenue by customer segment and product category. 
+• Identify top-performing products. 
+• Analyze revenue trends over time. 
+• Generate business insights and recommendations. 
 
-## Business Objectives
+**Tools & Technologies**
 
-- Clean and prepare raw transaction data using SQL.
-- Build a structured transaction-level dataset.
-- Calculate Recency, Frequency, and Monetary metrics.
-- Assign RFM scores using quartile-based scoring.
-- Segment customers based on purchasing behavior.
-- Identify customers based on churn risk.
-- Analyze revenue by customer segment and product category.
-- Identify top-performing products.
-- Analyze revenue trends over time.
-- Generate business insights and recommendations.
+• MySQL 
+• SQL 
+• Power BI 
+• DAX 
+• RFM Analysis 
+• Data Visualization 
 
----
+**SQL Analysis**
 
-## Tools & Technologies
+SQL was used for data preparation, validation, transformation, customer-level analysis, RFM calculations, segmentation, and churn-risk classification. 
 
-- **MySQL**
-- **SQL**
-- **Power BI**
-- **DAX**
-- **RFM Analysis**
-- **Data Visualization**
+**Data Preparation**
 
----
+The raw sales data was loaded into a staging table and prepared for analysis. 
 
-## Project Workflow
+The SQL process included: 
 
-```text
-Raw Transaction Data
-        ↓
-Data Cleaning & Transformation using SQL
-        ↓
-Transaction Validation
-        ↓
-Customer-Level RFM Calculation
-        ↓
-RFM Scoring
-        ↓
-Customer Segmentation
-        ↓
-Churn Risk Classification
-        ↓
-Power BI Data Model
-        ↓
-Interactive Dashboard
-        ↓
-Business Insights & Recommendations
+• Creating the database and staging table. 
+• Reviewing the raw transaction data. 
+• Identifying customer/header rows. 
+• Separating customer information from transaction records. 
+• Filling customer and region information using SQL window functions. 
+• Removing non-transaction rows. 
+• Converting dates and numeric fields into appropriate data types. 
+• Creating a structured sales transaction table. 
 
-## SQL Analysis
-1. Data Preparation
+**Data Validation**
 
-The raw sales data was loaded into a staging table and analyzed for data quality and structure.
+The transaction data was validated using checks such as: 
 
-The SQL workflow included:
+• Total transaction count 
+• Distinct customer count 
+• Minimum transaction date 
+• Maximum transaction date 
+• Missing Customer ID checks 
+• Duplicate Transaction ID checks 
 
-Creating the database and staging table.
-Identifying customer/header rows.
-Separating customer information from transaction records.
-Filling customer and region information using window functions.
-Removing non-transaction rows.
-Converting date and numeric fields into appropriate data types.
-Creating a structured sales transaction table.
+**RFM Analysis**
 
-2. Data Validation
+RFM analysis was performed at the customer level. 
 
-The transaction data was validated using checks such as:
+**Recency**
 
-Total transaction count
-Distinct customer count
-Minimum and maximum transaction dates
-Missing Customer ID checks
-Duplicate Transaction ID checks
+Measures how recently a customer made a purchase. 
 
-3. RFM Analysis
+**Frequency**
 
-Customer-level RFM metrics were calculated:
+Measures how frequently a customer made transactions. 
 
-Recency — Number of days since the customer's most recent purchase.
-Frequency — Number of distinct transactions made by the customer.
-Monetary — Total amount spent by the customer.
+**Monetary**
 
-The RFM analysis uses June 30, 2025 as the analysis date.
+Measures the total amount spent by a customer. 
 
-4. RFM Scoring
+The RFM analysis uses June 30, 2025 as the analysis date. 
 
-Customers were assigned scores using NTILE(4):
+**RFM Scoring**
 
-Recency score
-Frequency score
-Monetary score
+Customers were assigned RFM scores using the SQL NTILE(4) function. 
 
-The three scores were combined to create an overall RFM score.
+The scoring was based on: 
 
-5. Customer Segmentation
+• Recency 
+• Frequency 
+• Monetary value 
 
-Customers were classified into seven customer segments:
+The individual scores were combined to create an overall RFM score. 
 
-Champions
-Loyal Customers
-Potential Loyalists
-New Customers
-At Risk
-Need Attention
-Lost Customers
+**Customer Segmentation** 
 
-6. Churn Risk Classification
+Customers were classified into seven segments based on their RFM behavior: 
 
-Customers were classified based on their Recency:
+• Champions 
+• Loyal Customers 
+• Potential Loyalists 
+• New Customers 
+• At Risk 
+• Need Attention 
+• Lost Customers 
 
-Low Risk — Recency ≤ 30 days
-Medium Risk — Recency between 31 and 60 days
-High Risk — Recency > 60 days
-Power BI Dashboard
+**Churn Risk Classification**
 
-The Power BI report contains four analytical pages.
+Customers were classified into three churn-risk categories based on Recency: 
 
-Page 1 — Customer RFM Analysis
+• Low Risk — Recency ≤ 30 days 
+• Medium Risk — Recency between 31 and 60 days 
+• High Risk — Recency > 60 days  
 
-This page provides an overview of customer behavior and RFM-based analysis.
+**Power BI Dashboard**
 
-Key metrics
-Total Customers
-Total Revenue
-High Risk Customers
-High Risk %
-Average Recency
-Average Frequency
-Visualizations
-Customer Distribution by Churn Risk
-Customer Engagement & Value by Segment
-Customer Distribution by Segment
-Revenue by Customer Segment
-Interactive Filters
-Customer Segment
-Churn Risk
+The Power BI report contains four pages. 
 
-Page 2 — Customer & Revenue Analysis
+**Page 1 — Customer RFM Analysis Dashboard**
 
-This page focuses on revenue distribution across customer segments and product categories.
+This page provides an overview of customer behavior, RFM segmentation, and churn risk. 
 
-Visualizations
-Revenue by Product Category
-Revenue Contribution by Customer Segment
-Quantity vs Revenue by Product Category
-Revenue by Customer Segment & Product Category
+KPIs: 
 
-Page 3 — Transaction & Product Performance
+• Total Customers 
+• Total Revenue 
+• High Risk Customers 
+• High Risk % 
+• Average Recency 
+• Average Frequency 
 
-This page focuses on transaction trends and product-level performance.
+Visualizations: 
 
-Visualizations
-Revenue Trend Over Time
-Top Products by Revenue
-Quantity Distribution by Product Category
-Product Performance Details
+• Customer Distribution by Churn Risk 
+• Customer Engagement & Value by Segment 
+• Customer Distribution by Segment 
+• Revenue by Customer Segment 
 
-Page 4 — Executive Summary
+Interactive Slicers: 
 
-This page summarizes the major findings from the analysis and translates them into business actions.
+• Customer Segment 
+• Churn Risk 
 
-Key Business Insights
-41% of customers are classified as High Risk, indicating a significant customer-retention concern.
-At Risk customers contribute the highest revenue among the identified customer segments.
-Electronics is the leading product category by revenue.
-Revenue declines substantially from January to June, indicating a need to investigate the drivers of the decline.
+**Page 2 — Customer & Revenue Analysis**
 
-Recommended Actions 
-Prioritize retention campaigns for High Risk customers. 
-Use targeted offers and personalized engagement for At Risk customers. 
-Focus inventory and marketing efforts on high-performing product categories. 
-Investigate the factors contributing to the decline in monthly revenue. 
-Develop segment-specific strategies to improve customer retention and customer value. 
+This page focuses on revenue contribution across customer segments and product categories. 
 
-Key Business Insights: 
-Customer Risk 
+Visualizations: 
+
+• Revenue by Product Category 
+• Revenue Contribution by Customer Segment 
+• Quantity vs Revenue by Product Category 
+• Revenue by Customer Segment & Product Category 
+
+**Page 3 — Transaction & Product Performance**
+
+This page focuses on transaction trends and product-level performance. 
+
+Visualizations: 
+
+• Revenue Trend Over Time 
+• Top Products by Revenue  
+• Quantity Distribution by Product Category 
+• Product Performance Details 
+
+**Page 4 — Executive Summary & Business Insights**
+
+This page summarizes the major findings from the analysis and presents business recommendations. 
+
+Key areas: 
+
+• Total Revenue 
+• Total Customers 
+• High Risk Customers 
+• High Risk % 
+• Key Business Insights 
+• Recommended Actions 
+
+**Key Business Insights**
+**Customer Risk**
+
 41% of customers are classified as High Risk, highlighting a significant customer-retention concern. 
 
-Customer Revenue: 
+**Customer Revenue**
+
 At Risk customers contribute the highest revenue among the identified customer segments. 
 
-Product Performance: 
+**Product Performance**
+
 Electronics is the leading product category by revenue, outperforming Furniture and Office Supplies. 
 
-Revenue Trend: 
+**Revenue Trend**
+
 Revenue declines substantially from January to June, indicating the need to investigate the factors driving the decline. 
 
-Business Recommendations 
-Customer Retention 
+**Business Recommendations**
+**Customer Retention**
+
 Prioritize retention campaigns for High Risk customers and identify opportunities to move them into stronger customer segments. 
 
-Revenue Protection 
-Focus on At Risk customers, as they contribute the highest revenue. Use targeted offers and personalized engagement to reduce potential revenue loss. 
+**Revenue Protection**
 
-Product Strategy 
+Focus on At Risk customers because they contribute the highest revenue. Use targeted offers and personalized engagement to reduce potential revenue loss. 
+
+**Product Strategy**
+
 Strengthen the Electronics category while identifying opportunities to improve the performance of Furniture and Office Supplies. 
 
-Revenue Improvement 
-Analyze the significant revenue decline from January to June and identify the main factors driving the decrease. 
+**Revenue Improvement**
 
-Customer Segmentation 
+Investigate the significant revenue decline from January to June and identify the main factors contributing to the decrease. 
+
+**Customer Segmentation**
+
 Develop segment-specific strategies to retain At Risk customers, re-engage Lost Customers, and nurture Potential Loyalists toward higher-value segments. 
 
-## Project Outcome
+**Project Outcome**
 
-This project demonstrates the use of SQL and Power BI to transform transaction data into customer-level insights.
+This project demonstrates how SQL and Power BI can be combined to transform transaction data into meaningful customer and business insights. 
 
-The analysis helps identify:
+The analysis helps identify: 
 
-High-value customers
-Customers at risk of churn
-Customer segments
-Revenue-driving segments
-High-performing product categories
-Top-performing products
-Revenue trends
+• High-value customers 
+• Customers at risk of churn 
+• Customer segments 
+• Revenue-driving segments 
+• High-performing product categories 
+• Top-performing products 
+• Revenue trends 
 
-The resulting dashboard provides an interactive view of customer behavior, revenue performance, product performance, and business recommendations.
-
-Author — Pranathi K
+The resulting Power BI dashboard provides an interactive view of customer behavior, churn risk, revenue performance, product performance, and business recommendations. 
