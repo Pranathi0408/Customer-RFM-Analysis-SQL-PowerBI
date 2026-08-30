@@ -1,4 +1,5 @@
-**Customer RFM Analysis — SQL & Power BI** 
+**Customer RFM Analysis — SQL & Power BI**    
+
 **Project Overview** 
 
 This project analyzes customer purchasing behavior, customer segmentation, churn risk, revenue performance, and product performance using MySQL and Power BI. 
