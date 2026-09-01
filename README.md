@@ -8,6 +8,14 @@ The project applies RFM (Recency, Frequency, Monetary) analysis to understand cu
 
 The final Power BI dashboard contains four pages that provide customer-level analysis, revenue analysis, product performance, and an executive summary with business recommendations. 
 
+**Dataset**
+
+The dataset used for this project is the Raw Sales Dataset for RFM Customer Segmentation.
+
+Dataset Source: https://www.kaggle.com/datasets/charmmyaeaung/raw-sales-dataset-for-rfm-customer-segmentation/data
+
+Original Dataset: Raw Sales Dataset for RFM Customer Segmentation
+
 **Objectives**
 
 • Analyze customer purchasing behavior using transaction data. 
